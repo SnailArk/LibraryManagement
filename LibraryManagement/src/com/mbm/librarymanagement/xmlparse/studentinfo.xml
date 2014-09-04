@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<studentinfo>
+	<student>
+		<firstName>manav</firstName>
+		<lastName>raj</lastName>
+		<fatherName>kumar</fatherName>
+		<dateOfBirth>1990-08-21</dateOfBirth>
+		<gender>Male</gender>
+		<email>manav@gmail.com</email>
+		<mobile>9460669866</mobile>
+		<studentNumber>cse/mca/4</studentNumber>
+		<admissionYear>2014</admissionYear>
+		<enrollNumber>08/3960</enrollNumber>
+		<uID>manav@gmail.com</uID>
+		<password>9460669866</password>
+	</student>
+	
+	<student>
+		<firstName>manavi</firstName>
+		<lastName>raj</lastName>
+		<fatherName>kumar</fatherName>
+		<dateOfBirth>1990-08-21</dateOfBirth>
+		<gender>FeMale</gender>
+		<email>manav1@gmail.com</email>
+		<mobile>9460669866</mobile>
+		<studentNumber>cse/mca/4</studentNumber>
+		<admissionYear>2014</admissionYear>
+		<enrollNumber>08/3960</enrollNumber>
+		<uID>manav1@gmail.com</uID>
+		<password>9460669866</password>
+	</student>
+
+</studentinfo>

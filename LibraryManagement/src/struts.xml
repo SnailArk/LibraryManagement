@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="default" extends="struts-default">
+		<action name="registration"
+			class="com.mbm.librarymanagement.action.RegisterStudentAction"
+			method="execute">
+			<result name="success" type="redirectAction">
+				<param name="id">${id}</param>
+				<param name="actionName">updateForm</param>
+			</result>
+			<result name="create">register_student.jsp</result>
+			<result name="error">register_student.jsp</result>
+			<result name="input">register_student.jsp</result>
+		</action>
+		
+		<action name="index" class="com.mbm.librarymanagement.action.IndexAction"
+			method="execute">
+			<result name="success">/index.jsp</result>
+		</action>
+		
+		
+		<action name="login" class="com.mbm.librarymanagement.action.LoginAction"
+			method="execute">
+			<result name="operatorpanel" type="redirectAction">
+				<param name="actionName">operatorpanel</param>
+			</result>
+			
+			<result name="studentpanel" type="redirectAction">
+				<param name="actionName">studentpanel</param>
+			</result>
+						
+			<result name="success">/index.jsp</result>
+			<result name="error">/index.jsp</result>
+			<result name="login">/index.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+	</package>
+
+
+	<package name="libmgmt" extends="struts-default">
+		
+		<interceptors>
+			<interceptor name="authentication"
+				class="com.mbm.librarrymanagement.interceptor.AuthenticationInterceptor"></interceptor>
+			<interceptor-stack name="authStack">
+				<interceptor-ref name="authentication"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="authStack"></default-interceptor-ref>
+
+		<global-results>
+			<result name="login" type="redirect">login</result>
+		</global-results>
+		
+		<action name="updateForm"
+			class="com.mbm.librarymanagement.action.UpdateStudentAction" method="execute">
+			<result name="success">/update_student.jsp</result>
+			<result name="error">/update_student.jsp</result>
+			<result name="input">/update_student.jsp</result>
+		</action>
+
+		<action name="search"
+			class="com.mbm.librarymanagement.action.SearchStudentAction" method="execute">
+			<result name="success">/search_student.jsp</result>
+			<result name="show">/search_student.jsp</result>
+		</action>
+
+		<action name="addBook" class="com.mbm.librarymanagement.action.AddBookAction"
+			method="execute">
+			<result name="success">/add_book.jsp</result>
+			<result name="error">/add_book.jsp</result>
+			<result name="update" type="redirectAction">
+				<param name="id">${id}</param>
+				<param name="actionName">updateBook</param>
+			</result>
+			<result name="input">/add_book.jsp</result>
+		</action>
+
+		<action name="searchBook"
+			class="com.mbm.librarymanagement.action.SearchBookAction" method="execute">
+			<result name="success">/search_book.jsp</result>
+			<result name="error">/search_book.jsp</result>
+			<result name="input">/search_book.jsp</result>
+		</action>
+
+		<action name="updateBook"
+			class="com.mbm.librarymanagement.action.UpdateBookAction" method="execute">
+			<result name="success">/update_book.jsp</result>
+			<result name="error">/update_book.jsp</result>
+			<result name="input">/update_book.jsp</result>
+		</action>
+
+		<action name="issueBook" class="com.mbm.librarymanagement.action.IssueBookAction"
+			method="execute">
+			<result name="success">/issue_book.jsp</result> <!-- when book issued -->
+			<result name="error">/issue_book.jsp</result>  <!-- when come error -->
+			<result name="issuebook">/issue_book.jsp</result> <!--when come first time -->
+			<result name="input">/issue_book.jsp</result>
+		</action>
+
+		<action name="studentpanel"
+			class="com.mbm.librarymanagement.action.StudentPanelAction" method="execute">
+			<result name="success">/student_panel.jsp</result>
+		</action>
+
+		<action name="operatorpanel"
+			class="com.mbm.librarymanagement.action.OperatorPanelAction" method="execute">
+			<result name="success">/operator_panel.jsp</result>
+		</action>
+
+	</package>
+</struts>
