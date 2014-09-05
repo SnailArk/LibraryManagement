@@ -1,4 +1,4 @@
-package com.mbm.librarrymanagement.interceptor;
+package com.mbm.librarymanagement.interceptor;
 import java.util.Map;
 
 import com.mbm.librarymanagement.model.UserVO;

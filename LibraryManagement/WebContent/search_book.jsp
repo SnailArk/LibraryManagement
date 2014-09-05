@@ -50,7 +50,6 @@
 
 		<s:iterator id="bookVOs" value="bookVOs">
 			<tr>
-				<td><s:property value="editable" /></td>
 				<s:if test="%{editable}">
 					<td><a href='updateBook?id=<s:property value="id" />'> <s:property
 								value="uniqueId" /></a></td>
